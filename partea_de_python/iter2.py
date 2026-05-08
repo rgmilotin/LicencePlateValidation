@@ -3,16 +3,19 @@ import imutils
 import numpy as np
 import pytesseract
 import re
+from pathlib import Path
+
 
 # =============================
 # CONFIGURARE
 # =============================
 
 # Path catre executabilul Tesseract OCR instalat pe Windows
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+# pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 # Imaginea pe care o testam
-IMAGE_PATH = r"D:\Poli\LigaAC\LABS2026\Magna\Lab2\LicencePlateValidation\masina8.png"
+BASE_DIR = Path(__file__).resolve().parent
+IMAGE_PATH = BASE_DIR / "masina8.png"
 
 # Lista codurilor de judete acceptate pentru numere romanesti
 JUDETE = [
